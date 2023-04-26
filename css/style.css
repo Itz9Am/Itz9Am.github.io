@@ -1,0 +1,42 @@
+html {
+    background: lightgrey;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    padding: 5vh 5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo {
+    width: 100vw;
+    height: 50vh;
+    background: no-repeat center/contain url(../img/Crypta.png);
+    padding-left: 200px;
+    font-size: 5vw;
+}
+
+#logo h1 {
+    display: none;
+}
+
+input {
+    font-size: 200%;
+}

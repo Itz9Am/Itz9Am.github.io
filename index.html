@@ -2,8 +2,26 @@
 <html>
   <head>
     <title>Crypta</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/scittle@0.5.14/dist/scittle.js" type="application/javascript"></script>
+    <script src="src/crypta/core.cljs" type="application/x-scittle"></script>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <main>
+      <section id="splash-container">
+        <div id="logo">
+           <h1>Crypta</h1>
+        </div>
+    </section>
+    </main>
+    <div>
+      <label for="encode">Encode</label>
+      <input id="encode">
+    </div>
+    <div>
+      <label for="decode">Decode</label>
+      <input id="decode">
+    </div>
   </body>
 </html>
