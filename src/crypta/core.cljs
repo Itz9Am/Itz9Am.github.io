@@ -30,12 +30,22 @@
 
 ;; HTML helpers
 
-(defn attach-handler! [element-id handler]
+(defn attach-input-handler! [element-id handler]
+  (set! (.-oninput (js/document.getElementById element-id))
+        (fn [event] (-> event .-target .-value handler))))
+
+(defn attach-change-handler! [element-id handler]
   (set! (.-onchange (js/document.getElementById element-id))
         (fn [event] (-> event .-target .-value handler))))
 
 (defn set-value! [element-id value]
   (set! (.-value (js/document.getElementById element-id)) value))
+
+(defn get-value [element-id]
+  (.-value (js/document.getElementById element-id)))
+
+(defn copy-to-clipboard! [value]
+  (js/navigator.clipboard.writeText value))
 
 ;; Handlers
 
@@ -45,5 +55,12 @@
 (defn on-decode [arg]
   (set-value! "encode" (decode arg)))
 
-(attach-handler! "encode" on-encode)
-(attach-handler! "decode" on-decode)
+(defn on-change [arg]
+  (js/navigator.clipboard.writeText (get-value "decode"))
+  (set-value! "decode" "")
+  (set-value! "encode" ""))
+
+(attach-input-handler! "encode" on-encode)
+(attach-input-handler! "decode" on-decode)
+(attach-change-handler! "encode" on-change)
+(attach-change-handler! "decode" on-change)
