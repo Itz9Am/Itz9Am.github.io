@@ -2,7 +2,8 @@
   "Crypta" 
   (:require [clojure.string :as str]))
 
-(def key-vector [-1 0 -3 2 1 -3 -1 1 5 -7 -4 1 -4 1 -4 1 -4 -8 6 -5 2 -6 -2 5 0 4 8 -7])
+;(def key-vector [-1 0 -3 2 1 -3 -1 1 5 -7 -4 1 -4 1 -4 1 -4 -8 6 -5 2 -6 -2 5 0 4 8 -7])
+(def key-vector [-1 0 -3 2 1 -3 -1 1 5 -7 -4 1 -4 -8 6 -5 2 -6 -2 5 0 4 8 -7])
 
 (def inv-key (map - key-vector))
 
