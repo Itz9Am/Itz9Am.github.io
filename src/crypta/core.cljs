@@ -6,7 +6,7 @@
 (defn inv-key []
   (map - @key-vector))
 
-(def hide-key-state (atom false))
+(def hide-key-state (atom true))
 
 (def num->alpha (zipmap (range 29)
                         "abcdefghijklmnopqrstuvwxyzåäö"))
@@ -92,5 +92,5 @@
 (attach-change-handler! "key" on-key)
 (attach-click-handler! "hide-key" on-hide-key)
 (reset! key-vector (load! "key"))
-(set-value! "key" (str/join " " @key-vector))
+(set-value! "key" "* * * * * * * *")
 
