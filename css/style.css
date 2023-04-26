@@ -37,6 +37,16 @@ section {
     display: none;
 }
 
-input {
+.text-input {
+    padding: 10px;
     font-size: 200%;
+    display: flex;
+}
+
+.text-input label {
+    padding-right: 1ch;    
+}
+
+.text-input input {
+    flex: auto 1 1;
 }
