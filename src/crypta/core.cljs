@@ -1,5 +1,6 @@
 (ns crypta.core
-  "Crypta")
+  "Crypta" 
+  (:require [clojure.string :as str]))
 
 (def key-vector [-1 0 -3 2 1 -3 -1 1 5 -7 -4 1 -4 1 -4 1 -4 -8 6 -5 2 -6 -2 5 0 4 8 -7])
 
@@ -22,9 +23,9 @@
         (cons (code-letter letter key-digit)
               (code-msg (rest msg) (rest key)))))))
 
-(defn encode [input] (apply str (code-msg input (cycle key-vector))))
+(defn encode [input] (apply str (code-msg (str/lower-case input) (cycle key-vector))))
 
-(defn decode [code] (apply str (code-msg code (cycle inv-key))))
+(defn decode [code] (apply str (code-msg (str/lower-case code) (cycle inv-key))))
 
 ;; HTML helpers
 
